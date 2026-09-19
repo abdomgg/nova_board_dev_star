@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_nova_item_form" model="ir.ui.view">
+        <field name="name">nova.dashboard.item.form</field>
+        <field name="model">nova.dashboard.item</field>
+        <field name="arch" type="xml">
+            <form string="Widget">
+                <sheet>
+                    <group>
+                        <group string="Widget">
+                            <field name="name"/>
+                            <field name="item_type" widget="radio" options="{'horizontal': true}"/>
+                            <field name="icon" invisible="item_type not in ('kpi','tile')"/>
+                            <field name="color" widget="color"/>
+                            <field name="chart_palette"
+                                   invisible="item_type not in ('bar','hbar','line','area','waterfall','pie','doughnut','polar','radar','scatter','funnel','heatmap')"/>
+                            <field name="dashboard_id" invisible="context.get('default_dashboard_id')"/>
+                            <field name="sequence" groups="base.group_no_one"/>
+                        </group>
+                        <group string="Data Source" invisible="item_type in ('text','todo')">
+                            <field name="model_id" options="{'no_create': True}"/>
+                            <field name="model_name" invisible="1"/>
+                            <field name="domain" widget="domain" options="{'model': 'model_name', 'in_dialog': true}"
+                                   invisible="not model_id"/>
+                            <field name="date_field_id" options="{'no_create': True}"
+                                   invisible="not model_id"/>
+                            <field name="date_preset_item" invisible="not date_field_id"/>
+                        </group>
+                    </group>
+
+                    <group invisible="item_type in ('text','todo','list','scatter')">
+                        <group string="Measure">
+                            <field name="agg"/>
+                            <field name="measure_field_ids" widget="many2many_tags"
+                                   invisible="agg == 'count'" options="{'no_create': True}"/>
+                        </group>
+                        <group string="Grouping"
+                               invisible="item_type in ('kpi','tile','gauge','bullet')">
+                            <field name="group_field_id" options="{'no_create': True}"/>
+                            <field name="group_ttype" invisible="1"/>
+                            <field name="group_granularity"
+                                   invisible="group_ttype not in ('date','datetime')"/>
+                            <field name="subgroup_field_id" options="{'no_create': True}"
+                                   invisible="item_type in ('funnel','leaderboard')"/>
+                            <field name="subgroup_ttype" invisible="1"/>
+                            <field name="subgroup_granularity"
+                                   invisible="subgroup_ttype not in ('date','datetime')"/>
+                            <field name="record_limit"/>
+                            <field name="sort_dir"/>
+                        </group>
+                    </group>
+
+                    <group string="Scatter Axes" invisible="item_type != 'scatter'">
+                        <group>
+                            <field name="scatter_x_field_id" options="{'no_create': True}"/>
+                            <field name="scatter_y_field_id" options="{'no_create': True}"/>
+                        </group>
+                        <group>
+                            <field name="group_field_id" string="Color By" options="{'no_create': True}"/>
+                            <field name="record_limit"/>
+                        </group>
+                    </group>
+
+                    <group string="Columns" invisible="item_type != 'list'">
+                        <field name="list_field_ids" widget="many2many_tags" nolabel="1"
+                               options="{'no_create': True}" colspan="2"/>
+                        <field name="record_limit" string="Rows per Page"/>
+                    </group>
+
+                    <group invisible="item_type in ('text','todo')">
+                        <group string="Intelligence">
+                            <field name="enable_forecast"
+                                   invisible="item_type not in ('kpi','tile','bar','line','area')"/>
+                            <field name="forecast_periods" invisible="not enable_forecast"/>
+                            <field name="detect_anomalies"
+                                   invisible="item_type not in ('bar','hbar','line','area')"/>
+                            <field name="compare_previous_item"/>
+                            <field name="target_value"
+                                   invisible="item_type not in ('kpi','tile','gauge','bullet')"/>
+                        </group>
+                        <group string="Presentation">
+                            <field name="value_style"/>
+                            <field name="use_currency"/>
+                            <field name="unit_label" invisible="use_currency"/>
+                            <field name="stacked"
+                                   invisible="item_type not in ('bar','hbar','line','area')"/>
+                            <field name="cumulative"
+                                   invisible="item_type not in ('bar','line','area')"/>
+                            <field name="fill_gaps"
+                                   invisible="item_type not in ('bar','hbar','line','area')"/>
+                            <field name="show_values"
+                                   invisible="item_type not in ('bar','hbar','line','area','pie','doughnut','polar')"/>
+                            <field name="show_legend"
+                                   invisible="item_type in ('kpi','tile','gauge','bullet','list','leaderboard','funnel','heatmap')"/>
+                            <field name="show_records"/>
+                        </group>
+                    </group>
+
+                    <group string="Tasks" invisible="item_type != 'todo'">
+                        <field name="todo_ids" nolabel="1" colspan="2">
+                            <list editable="bottom">
+                                <field name="sequence" widget="handle"/>
+                                <field name="name"/>
+                                <field name="done"/>
+                            </list>
+                        </field>
+                    </group>
+
+                    <group string="Content" invisible="item_type != 'text'">
+                        <field name="text_content" nolabel="1" colspan="2"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_nova_item_list" model="ir.ui.view">
+        <field name="name">nova.dashboard.item.list</field>
+        <field name="model">nova.dashboard.item</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="sequence" widget="handle"/>
+                <field name="name"/>
+                <field name="item_type"/>
+                <field name="model_id"/>
+                <field name="dashboard_id"/>
+            </list>
+        </field>
+    </record>
+</odoo>

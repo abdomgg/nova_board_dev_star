@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_nova_dashboard_form" model="ir.ui.view">
+        <field name="name">nova.dashboard.form</field>
+        <field name="model">nova.dashboard</field>
+        <field name="arch" type="xml">
+            <form string="Dashboard">
+                <header>
+                    <button name="action_open" type="object" string="Open Dashboard"
+                            class="btn-primary" icon="fa-rocket"/>
+                </header>
+                <sheet>
+                    <div class="oe_title">
+                        <h1><field name="name" placeholder="e.g. Revenue Command Center"/></h1>
+                        <field name="description" placeholder="Subtitle shown under the title..."/>
+                    </div>
+                    <group>
+                        <group string="Look &amp; Motion">
+                            <field name="theme"/>
+                            <field name="accent_color" widget="color"/>
+                            <field name="motion"/>
+                        </group>
+                        <group string="Behaviour">
+                            <field name="date_preset"/>
+                            <field name="compare_previous"/>
+                            <field name="refresh_interval"/>
+                            <field name="company_id" groups="base.group_multi_company"/>
+                        </group>
+                        <group string="Menu">
+                            <field name="create_menu"/>
+                            <field name="menu_parent_id" invisible="not create_menu"/>
+                            <field name="sequence"/>
+                        </group>
+                        <group string="Access">
+                            <field name="access_group_ids" widget="many2many_tags"/>
+                            <field name="active" invisible="1"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Widgets">
+                            <field name="item_ids" context="{'default_dashboard_id': id}">
+                                <list>
+                                    <field name="sequence" widget="handle"/>
+                                    <field name="name"/>
+                                    <field name="item_type"/>
+                                    <field name="model_id"/>
+                                </list>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_nova_dashboard_list" model="ir.ui.view">
+        <field name="name">nova.dashboard.list</field>
+        <field name="model">nova.dashboard</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="sequence" widget="handle"/>
+                <field name="name"/>
+                <field name="theme"/>
+                <field name="item_count" string="Widgets"/>
+                <field name="create_menu"/>
+                <button name="action_open" type="object" string="Open" icon="fa-rocket"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_nova_dashboard_kanban" model="ir.ui.view">
+        <field name="name">nova.dashboard.kanban</field>
+        <field name="model">nova.dashboard</field>
+        <field name="arch" type="xml">
+            <kanban class="o_kanban_mobile">
+                <field name="name"/>
+                <field name="theme"/>
+                <field name="item_count"/>
+                <templates>
+                    <t t-name="card">
+                        <div class="p-2">
+                            <strong><field name="name"/></strong>
+                            <div class="text-muted">
+                                <field name="item_count"/> widgets · <field name="theme"/>
+                            </div>
+                            <button name="action_open" type="object"
+                                    class="btn btn-primary btn-sm mt-2">Open</button>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+    <record id="action_nova_dashboards" model="ir.actions.act_window">
+        <field name="name">Dashboards</field>
+        <field name="res_model">nova.dashboard</field>
+        <field name="view_mode">kanban,list,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">Create your first NovaBoard</p>
+            <p>Cinematic dashboards with built-in forecasting, anomaly detection and insights.</p>
+        </field>
+    </record>
+
+    <record id="action_nova_showcase" model="ir.actions.server">
+        <field name="name">Generate Showcase</field>
+        <field name="model_id" ref="model_nova_dashboard"/>
+        <field name="state">code</field>
+        <field name="code">action = model.action_create_showcase()</field>
+    </record>
+</odoo>

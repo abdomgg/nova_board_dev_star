@@ -1,0 +1,7 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_nova_dashboard_user,nova.dashboard user,model_nova_dashboard,group_nova_user,1,0,0,0
+access_nova_dashboard_manager,nova.dashboard manager,model_nova_dashboard,group_nova_manager,1,1,1,1
+access_nova_item_user,nova.dashboard.item user,model_nova_dashboard_item,group_nova_user,1,0,0,0
+access_nova_item_manager,nova.dashboard.item manager,model_nova_dashboard_item,group_nova_manager,1,1,1,1
+access_nova_todo_user,nova.dashboard.item.todo user,model_nova_dashboard_item_todo,group_nova_user,1,1,1,0
+access_nova_todo_manager,nova.dashboard.item.todo manager,model_nova_dashboard_item_todo,group_nova_manager,1,1,1,1

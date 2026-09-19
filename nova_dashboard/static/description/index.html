@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>NovaBoard — Live BI Dashboards for Odoo</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"/>
+</head>
+<body>
+<section class="oe_styling_v8" style="font-family: 'Inter', Helvetica, Arial, sans-serif; color: #33324a;">
+
+  <!-- ===================== HERO ===================== -->
+  <div class="container-fluid" style="background-color: #12162b; padding-top: 56px; padding-bottom: 56px; border-radius: 12px;">
+    <div class="container text-center">
+      <div style="color: #8fe3c7; font-size: 14px; letter-spacing: 4px; font-weight: 600; margin-bottom: 18px;">NOVABOARD &middot; INTELLIGENT DASHBOARD STUDIO</div>
+      <h1 style="color: #ffffff; font-size: 42px; font-weight: 700; margin-bottom: 18px;">Dashboards that forecast, flag anomalies, and explain what they find &mdash; in your words</h1>
+      <p style="color: #9d9bc0; font-size: 19px; max-width: 760px; margin-left: auto; margin-right: auto; margin-bottom: 28px;">
+        20+ cinematic widget types, a built-in analytics brain that forecasts and catches outliers on its own, and NovaMind, an AI copilot that composes, restyles and narrates your boards. Zero external Python dependencies &mdash; installs anywhere Odoo runs.
+      </p>
+      <div style="display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; margin-bottom: 32px;">
+        <span style="background-color: #1d2240; border: 1px solid #2c3260; color: #8fe3c7; font-size: 12.5px; font-weight: 600; padding: 7px 16px; border-radius: 20px;">20+ widget types</span>
+        <span style="background-color: #1d2240; border: 1px solid #2c3260; color: #8fe3c7; font-size: 12.5px; font-weight: 600; padding: 7px 16px; border-radius: 20px;">5 themes &middot; 10 accents</span>
+        <span style="background-color: #1d2240; border: 1px solid #2c3260; color: #8fe3c7; font-size: 12.5px; font-weight: 600; padding: 7px 16px; border-radius: 20px;">Forecasting + anomalies</span>
+        <span style="background-color: #1d2240; border: 1px solid #2c3260; color: #8fe3c7; font-size: 12.5px; font-weight: 600; padding: 7px 16px; border-radius: 20px;">AI copilot built in</span>
+        <span style="background-color: #1d2240; border: 1px solid #2c3260; color: #8fe3c7; font-size: 12.5px; font-weight: 600; padding: 7px 16px; border-radius: 20px;">Zero Python deps</span>
+      </div>
+      <img src="images/01_gallery.png" class="img-fluid" style="border-radius: 10px; border: 1px solid #2c3260;" alt="NovaBoard dashboard gallery"/>
+    </div>
+  </div>
+
+  <!-- ===================== THE PROBLEM ===================== -->
+  <div class="container" style="padding-top: 56px; padding-bottom: 24px;">
+    <div class="row justify-content-center text-center">
+      <div class="col-lg-9">
+        <h2 style="color: #4038b5; font-size: 30px; font-weight: 700; margin-bottom: 16px;">Stop choosing between a rigid built-in dashboard and a BI tool you never touch</h2>
+        <p style="font-size: 18px; color: #6c6a85; line-height: 1.7;">
+          Odoo's default dashboards are fixed, and full BI suites take a consultant to configure and a stack of third-party JS to ship. NovaBoard sits in between: a collision-aware drag &amp; resize grid built from scratch, charts drawn with Odoo's own bundled Chart.js, and an analytics brain that forecasts and flags anomalies without calling out to anything &mdash; no gridstack, no jQuery, no external Python packages.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================== SIX GROUPS ===================== -->
+  <div class="container" style="padding-top: 24px; padding-bottom: 40px;">
+    <div class="text-center" style="margin-bottom: 28px;">
+      <h2 style="color: #4038b5; font-size: 28px; font-weight: 700;">Eight things NovaBoard gives you, one app</h2>
+    </div>
+    <div class="row">
+      <div class="col-md-4" style="margin-bottom: 20px;">
+        <div style="background-color: #f6f5f1; border-radius: 10px; padding: 24px; border-top: 3px solid #5b4ee5; height: 100%;">
+          <h4 style="color: #12162b; font-weight: 700; font-size: 19px; margin-bottom: 12px;">20+ Live Widget Types</h4>
+          <p style="color: #6c6a85; font-size: 15px; line-height: 1.7; margin-bottom: 0;">KPI cards, area/line/bar charts, leaderboards, funnels, gauges, heatmaps, waterfall and bullet charts &mdash; all wired directly to your Odoo data with hardware-accelerated motion.</p>
+        </div>
+      </div>
+      <div class="col-md-4" style="margin-bottom: 20px;">
+        <div style="background-color: #f6f5f1; border-radius: 10px; padding: 24px; border-top: 3px solid #5b4ee5; height: 100%;">
+          <h4 style="color: #12162b; font-weight: 700; font-size: 19px; margin-bottom: 12px;">Forecasting &amp; Anomaly Detection</h4>
+          <p style="color: #6c6a85; font-size: 15px; line-height: 1.7; margin-bottom: 0;">Linear-regression forecasts with confidence bands and z-score anomaly detection, built in &mdash; no external model, no API call.</p>
+        </div>
+      </div>
+      <div class="col-md-4" style="margin-bottom: 20px;">
+        <div style="background-color: #f6f5f1; border-radius: 10px; padding: 24px; border-top: 3px solid #5b4ee5; height: 100%;">
+          <h4 style="color: #12162b; font-weight: 700; font-size: 19px; margin-bottom: 12px;">NovaMind AI Copilot</h4>
+          <p style="color: #6c6a85; font-size: 15px; line-height: 1.7; margin-bottom: 0;">Ask it to build a dashboard, add a widget, restyle the theme, or answer a data question &mdash; runs on a built-in offline brain, or your own OpenAI-compatible key.</p>
+        </div>
+      </div>
+      <div class="col-md-4" style="margin-bottom: 20px;">
+        <div style="background-color: #f6f5f1; border-radius: 10px; padding: 24px; border-top: 3px solid #5b4ee5; height: 100%;">
+          <h4 style="color: #12162b; font-weight: 700; font-size: 19px; margin-bottom: 12px;">Smart Date Intelligence</h4>
+          <p style="color: #6c6a85; font-size: 15px; line-height: 1.7; margin-bottom: 0;">18 date presets, custom ranges, previous-period comparison, temporal gap filling and timezone-correct bucketing &mdash; per widget.</p>
+        </div>
+      </div>
+      <div class="col-md-4" style="margin-bottom: 20px;">
+        <div style="background-color: #f6f5f1; border-radius: 10px; padding: 24px; border-top: 3px solid #5b4ee5; height: 100%;">
+          <h4 style="color: #12162b; font-weight: 700; font-size: 19px; margin-bottom: 12px;">Blueprint Dashboards</h4>
+          <p style="color: #6c6a85; font-size: 15px; line-height: 1.7; margin-bottom: 0;">Sales Command Center and CRM Pipeline Intelligence auto-install the moment the matching Odoo apps are present &mdash; plus a one-click Showcase generator that adapts to whatever else you've installed.</p>
+        </div>
+      </div>
+      <div class="col-md-4" style="margin-bottom: 20px;">
+        <div style="background-color: #f6f5f1; border-radius: 10px; padding: 24px; border-top: 3px solid #5b4ee5; height: 100%;">
+          <h4 style="color: #12162b; font-weight: 700; font-size: 19px; margin-bottom: 12px;">n8n Automation Bridge</h4>
+          <p style="color: #6c6a85; font-size: 15px; line-height: 1.7; margin-bottom: 0;">Push KPIs, insights and anomaly digests to a scheduled webhook, with a one-click test so you know it's wired correctly before you trust it.</p>
+        </div>
+      </div>
+      <div class="col-md-4" style="margin-bottom: 20px;">
+        <div style="background-color: #f6f5f1; border-radius: 10px; padding: 24px; border-top: 3px solid #5b4ee5; height: 100%;">
+          <h4 style="color: #12162b; font-weight: 700; font-size: 19px; margin-bottom: 12px;">Themes &amp; TV Mode</h4>
+          <p style="color: #6c6a85; font-size: 15px; line-height: 1.7; margin-bottom: 0;">Five cinematic themes &mdash; Aurora, Daylight, Nebula, Carbon, Solar &mdash; with per-board accent color, a motion-effects toggle, and fullscreen TV mode for a wall display.</p>
+        </div>
+      </div>
+      <div class="col-md-4" style="margin-bottom: 20px;">
+        <div style="background-color: #f6f5f1; border-radius: 10px; padding: 24px; border-top: 3px solid #5b4ee5; height: 100%;">
+          <h4 style="color: #12162b; font-weight: 700; font-size: 19px; margin-bottom: 12px;">Built for Real Installs</h4>
+          <p style="color: #6c6a85; font-size: 15px; line-height: 1.7; margin-bottom: 0;">Auto menu creation, group-based access, multi-company aware, JSON export/import, per-widget PNG &amp; CSV export, and drill-down click-through to the underlying records.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================== FEATURE WALKTHROUGH ===================== -->
+  <div class="container" style="padding-top: 24px; padding-bottom: 24px;">
+
+    <div class="row align-items-center" style="margin-bottom: 46px;">
+      <div class="col-lg-5">
+        <h3 style="color: #12162b; font-weight: 700; font-size: 24px; margin-bottom: 12px;">Every dashboard, one gallery</h3>
+        <p style="color: #6c6a85; font-size: 15px; line-height: 1.7;">See every board you've got, how many widgets each one carries, and when it was last touched. Filter with Ctrl+K, spin up a blank board, or hand the brief to NovaMind and let it build the first draft.</p>
+      </div>
+      <div class="col-lg-7">
+        <img src="images/01_gallery.png" class="img-fluid" style="border-radius: 10px; border: 1px solid #e3e3e3;" alt="NovaBoard gallery with dashboard cards"/>
+      </div>
+    </div>
+
+    <div class="row align-items-center" style="margin-bottom: 46px;">
+      <div class="col-lg-5">
+        <h3 style="color: #12162b; font-weight: 700; font-size: 24px; margin-bottom: 12px;">Every new board starts on your terms</h3>
+        <p style="color: #6c6a85; font-size: 15px; line-height: 1.7;">Name it, pick from five hand-tuned themes with ten accent colors, set the default period and auto-refresh, toggle comparison to the previous period on by default, drop it as a menu item anywhere in Odoo, and link it into a <strong>Constellation</strong> with your other boards so they appear as quick-switch chips &mdash; all before you've added a single widget.</p>
+      </div>
+      <div class="col-lg-7">
+        <img src="images/11_new_dashboard_modal.png" class="img-fluid" style="border-radius: 10px; border: 1px solid #e3e3e3;" alt="New Dashboard creation modal with theme, accent color and behaviour settings"/>
+      </div>
+    </div>
+
+    <div class="row align-items-center flex-lg-row-reverse" style="margin-bottom: 46px;">
+      <div class="col-lg-5">
+        <h3 style="color: #12162b; font-weight: 700; font-size: 24px; margin-bottom: 12px;">Build any widget, watch it come alive first</h3>
+        <p style="color: #6c6a85; font-size: 15px; line-height: 1.7;">Widget Studio walks you through Data, Style and Intelligence in one panel &mdash; pick from 20 widget types across value, charts, proportions and data groups, and the preview renders against your real, live data before it ever touches the board.</p>
+      </div>
+      <div class="col-lg-7">
+        <img src="images/12_widget_studio.png" class="img-fluid" style="border-radius: 10px; border: 1px solid #e3e3e3;" alt="Widget Studio with widget type picker and live preview against real data"/>
+      </div>
+    </div>
+
+    <div class="row align-items-center" style="margin-bottom: 46px;">
+      <div class="col-lg-5">
+        <h3 style="color: #12162b; font-weight: 700; font-size: 24px; margin-bottom: 12px;">Every widget is a real Odoo record underneath</h3>
+        <p style="color: #6c6a85; font-size: 15px; line-height: 1.7;">Nothing here is a black box: pick the model, build the filter domain visually or hand-edit it, choose the date field and scope, set aggregation, group-by and granularity, sub-grouping, sort and limit &mdash; standard Odoo fields you can inherit, script or query through the ORM.</p>
+      </div>
+      <div class="col-lg-7">
+        <img src="images/14_widget_config_form.png" class="img-fluid" style="border-radius: 10px; border: 1px solid #e3e3e3;" alt="Backend widget record form with data source, filter domain, measures and grouping"/>
+      </div>
+    </div>
+
+    <div class="row align-items-center flex-lg-row-reverse" style="margin-bottom: 46px;">
+      <div class="col-lg-5">
+        <h3 style="color: #12162b; font-weight: 700; font-size: 24px; margin-bottom: 12px;">Any widget, full screen, with its own insight</h3>
+        <p style="color: #6c6a85; font-size: 15px; line-height: 1.7;">Click a widget and it expands with its stat strip &mdash; total, average, peak, point count &mdash; plus an auto-written insight line on momentum and period-over-period movement. Arrow through every other widget on the board without closing out.</p>
+      </div>
+      <div class="col-lg-7">
+        <img src="images/13_widget_inspector.png" class="img-fluid" style="border-radius: 10px; border: 1px solid #e3e3e3;" alt="Full-screen widget inspector with stats and auto-generated momentum insight"/>
+      </div>
+    </div>
+
+    <div class="row align-items-center" style="margin-bottom: 46px;">
+      <div class="col-lg-5">
+        <h3 style="color: #12162b; font-weight: 700; font-size: 24px; margin-bottom: 12px;">A real accounting command center</h3>
+        <p style="color: #6c6a85; font-size: 15px; line-height: 1.7;">Invoiced revenue, receivables, payables, overdue and draft invoices, cash flow, collections vs target, and your top customers and vendors &mdash; one screen instead of five reports.</p>
+      </div>
+      <div class="col-lg-7">
+        <img src="images/02_accounting_dashboard.png" class="img-fluid" style="border-radius: 10px; border: 1px solid #e3e3e3;" alt="Accounting dashboard with receivables, payables and cash flow widgets"/>
+      </div>
+    </div>
+
+    <div class="row align-items-center" style="margin-bottom: 46px;">
+      <div class="col-lg-5">
+        <h3 style="color: #12162b; font-weight: 700; font-size: 24px; margin-bottom: 12px;">Know what's on the board at a glance</h3>
+        <p style="color: #6c6a85; font-size: 15px; line-height: 1.7;">Board Info shows widget and model counts, the widget mix by type, which data sources feed it, and the board's theme and refresh setup &mdash; plus one-click export, settings and TV mode.</p>
+      </div>
+      <div class="col-lg-7">
+        <img src="images/03_board_info.png" class="img-fluid" style="border-radius: 10px; border: 1px solid #e3e3e3;" alt="Board Info panel with widget mix and data sources"/>
+      </div>
+    </div>
+
+    <div class="row align-items-center flex-lg-row-reverse" style="margin-bottom: 46px;">
+      <div class="col-lg-5">
+        <h3 style="color: #12162b; font-weight: 700; font-size: 24px; margin-bottom: 12px;">A plain-language read of every widget</h3>
+        <p style="color: #6c6a85; font-size: 15px; line-height: 1.7;">Insight Digest walks the whole board and tells you what actually moved: which trend is positive, where revenue peaked, who leads the pack, and where conversion is weakest &mdash; then offers a fuller Nova Brief on demand.</p>
+      </div>
+      <div class="col-lg-7">
+        <img src="images/04_insight_digest.png" class="img-fluid" style="border-radius: 10px; border: 1px solid #e3e3e3;" alt="Insight Digest panel summarizing each widget in plain language"/>
+      </div>
+    </div>
+
+    <div class="row align-items-center" style="margin-bottom: 46px;">
+      <div class="col-lg-5">
+        <h3 style="color: #12162b; font-weight: 700; font-size: 24px; margin-bottom: 12px;">One place to run the whole fleet</h3>
+        <p style="color: #6c6a85; font-size: 15px; line-height: 1.7;">Control Center shows every dashboard and widget you have, lets you switch NovaMind between the built-in engine, Claude or an OpenAI-compatible endpoint, and gives you new-dashboard, sample-install and JSON-import shortcuts in one panel.</p>
+      </div>
+      <div class="col-lg-7">
+        <img src="images/05_control_center.png" class="img-fluid" style="border-radius: 10px; border: 1px solid #e3e3e3;" alt="Control Center with fleet overview and NovaMind engine settings"/>
+      </div>
+    </div>
+
+    <div class="row align-items-center flex-lg-row-reverse" style="margin-bottom: 46px;">
+      <div class="col-lg-5">
+        <h3 style="color: #12162b; font-weight: 700; font-size: 24px; margin-bottom: 12px;">Ask NovaMind to build it for you</h3>
+        <p style="color: #6c6a85; font-size: 15px; line-height: 1.7;">"Build a sales dashboard." "Top 10 customers by revenue this year." "Switch theme to daylight." NovaMind composes whole dashboards, adds or restyles widgets, and answers questions straight from your live data.</p>
+      </div>
+      <div class="col-lg-7">
+        <img src="images/06_novamind_chat.png" class="img-fluid" style="border-radius: 10px; border: 1px solid #e3e3e3;" alt="NovaMind chat panel with suggested build actions"/>
+      </div>
+    </div>
+
+    <div class="row align-items-center" style="margin-bottom: 46px;">
+      <div class="col-lg-5">
+        <h3 style="color: #12162b; font-weight: 700; font-size: 24px; margin-bottom: 12px;">Five cinematic themes, your call</h3>
+        <p style="color: #6c6a85; font-size: 15px; line-height: 1.7;">Aurora, Nebula, Carbon, Daylight and Solar, each with a per-board accent color and an optional motion-effects toggle &mdash; pick per dashboard, not per install.</p>
+      </div>
+      <div class="col-lg-7">
+        <img src="images/07_sales_dashboard_theme.png" class="img-fluid" style="border-radius: 10px; border: 1px solid #e3e3e3;" alt="Sales dashboard with theme picker open"/>
+      </div>
+    </div>
+
+    <div class="row align-items-center flex-lg-row-reverse" style="margin-bottom: 46px;">
+      <div class="col-lg-5">
+        <h3 style="color: #12162b; font-weight: 700; font-size: 24px; margin-bottom: 12px;">Pipeline health without opening the CRM</h3>
+        <p style="color: #6c6a85; font-size: 15px; line-height: 1.7;">Pipeline value, open opportunities, won deals and new leads up top; stage-by-stage funnel, expected revenue trend, a stage &times; owner heatmap and your top performers below.</p>
+      </div>
+      <div class="col-lg-7">
+        <img src="images/08_crm_pipeline.png" class="img-fluid" style="border-radius: 10px; border: 1px solid #e3e3e3;" alt="CRM Pipeline Intelligence dashboard with funnel and heatmap"/>
+      </div>
+    </div>
+
+    <div class="row align-items-center" style="margin-bottom: 46px;">
+      <div class="col-lg-5">
+        <h3 style="color: #12162b; font-weight: 700; font-size: 24px; margin-bottom: 12px;">A brain underneath the widgets, not just a chart renderer</h3>
+        <p style="color: #6c6a85; font-size: 15px; line-height: 1.7;">Every widget's Intelligence tab gives you three switches: <strong>Predictive</strong> &mdash; forecast with a confidence band, set however many periods ahead; <strong>Vigilance</strong> &mdash; flag anomalies on the chart automatically; and <strong>Context</strong> &mdash; overlay the previous period for an instant comparison. All computed locally, on your own data, with nothing sent out.</p>
+      </div>
+      <div class="col-lg-7">
+        <img src="images/09_forecast_anomaly.png" class="img-fluid" style="border-radius: 10px; border: 1px solid #e3e3e3;" alt="Forecast chart with confidence band and flagged anomaly point"/>
+      </div>
+    </div>
+
+    <div class="row align-items-center flex-lg-row-reverse" style="margin-bottom: 20px;">
+      <div class="col-lg-5">
+        <h3 style="color: #12162b; font-weight: 700; font-size: 24px; margin-bottom: 12px;">Push your numbers out, on a schedule</h3>
+        <p style="color: #6c6a85; font-size: 15px; line-height: 1.7;">Wire a board to n8n and it'll push KPIs, insight digests and anomaly alerts to a webhook on whatever schedule you set. Test the connection with one click before you rely on it.</p>
+      </div>
+      <div class="col-lg-7">
+        <img src="images/10_n8n_bridge.png" class="img-fluid" style="border-radius: 10px; border: 1px solid #e3e3e3;" alt="n8n webhook automation settings with scheduled push and test button"/>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ===================== WHY IT'S DIFFERENT ===================== -->
+  <div class="container" style="padding-top: 8px; padding-bottom: 32px;">
+    <div style="background: linear-gradient(135deg, #5b4ee5 0%, #4038b5 100%); border-radius: 12px; padding: 40px 44px; text-align: center;">
+      <p style="color: #ffffff; font-size: 22px; font-weight: 600; line-height: 1.6; max-width: 780px; margin: 0 auto 14px;">
+        "Most dashboard apps make you choose between good-looking and actually useful. NovaBoard forecasts, flags anomalies and explains itself &mdash; and still ships zero external dependencies."
+      </p>
+      <p style="color: #d8d4ff; font-size: 13.5px; letter-spacing: 1px; margin: 0;">&middot; BUILT FOR PRODUCTION ODOO INSTANCES</p>
+    </div>
+  </div>
+
+  <!-- ===================== PRICING ===================== -->
+  <div class="container-fluid" style="background-color: #12162b; padding-top: 52px; padding-bottom: 52px; border-radius: 12px; margin-top: 24px;">
+    <div class="container text-center">
+      <div style="color: #8fe3c7; font-size: 13px; letter-spacing: 3px; font-weight: 600; margin-bottom: 10px;">PRICING</div>
+      <h2 style="color: #ffffff; font-size: 30px; font-weight: 700; margin-bottom: 14px;">One install, unlimited dashboards. Everything above is included.</h2>
+      <p style="color: #9d9bc0; font-size: 15px; max-width: 640px; margin: 0 auto 30px;">Leading Odoo dashboard suites run $440&ndash;$560 and still charge extra for forecasting or AI add-ons. NovaBoard ships forecasting, anomaly detection and the AI copilot standard &mdash; for less than half the price.</p>
+      <div style="background-color: #1d2240; border: 1px solid #2c3260; border-radius: 10px; max-width: 520px; margin: 0 auto; padding: 30px; text-align: left;">
+        <div style="font-family: monospace; font-size: 42px; color: #ffffff; font-weight: 700;">$249 <span style="font-size: 13px; color: #9d9bc0; font-weight: 400;">one-time, per database</span></div>
+        <div class="row" style="margin-top: 20px;">
+          <div class="col-6" style="color: #e8e7f5; font-size: 13.5px; padding: 8px 0;">&#10003; Unlimited dashboards</div>
+          <div class="col-6" style="color: #e8e7f5; font-size: 13.5px; padding: 8px 0;">&#10003; 20+ widget types</div>
+          <div class="col-6" style="color: #e8e7f5; font-size: 13.5px; padding: 8px 0;">&#10003; Forecasting + anomaly detection</div>
+          <div class="col-6" style="color: #e8e7f5; font-size: 13.5px; padding: 8px 0;">&#10003; NovaMind AI copilot</div>
+          <div class="col-6" style="color: #e8e7f5; font-size: 13.5px; padding: 8px 0;">&#10003; 5 themes + TV mode</div>
+          <div class="col-6" style="color: #e8e7f5; font-size: 13.5px; padding: 8px 0;">&#10003; Bring-your-own LLM</div>
+          <div class="col-6" style="color: #e8e7f5; font-size: 13.5px; padding: 8px 0;">&#10003; Blueprint dashboards</div>
+          <div class="col-6" style="color: #e8e7f5; font-size: 13.5px; padding: 8px 0;">&#10003; n8n automation bridge</div>
+          <div class="col-6" style="color: #e8e7f5; font-size: 13.5px; padding: 8px 0;">&#10003; JSON export / import</div>
+          <div class="col-6" style="color: #e8e7f5; font-size: 13.5px; padding: 8px 0;">&#10003; Zero Python dependencies</div>
+        </div>
+      </div>
+      <p style="color: #6c6a85; font-size: 13px; margin-top: 20px;">Free minor updates included. Major version upgrades and priority support available separately.</p>
+    </div>
+  </div>
+
+  <!-- ===================== FAQ ===================== -->
+  <div class="container" style="padding-top: 48px; padding-bottom: 24px;">
+    <div class="text-center" style="margin-bottom: 26px;">
+      <h2 style="color: #4038b5; font-size: 28px; font-weight: 700;">Frequently asked questions</h2>
+    </div>
+    <div class="row justify-content-center">
+      <div class="col-lg-9">
+        <div style="border-top: 1px solid #e3e3e3; padding-top: 16px; padding-bottom: 16px;">
+          <h5 style="color: #12162b; font-weight: 700; font-size: 16px; margin-bottom: 6px;">Do the widgets update in real time?</h5>
+          <p style="color: #6c6a85; font-size: 15px; margin-bottom: 0;">Yes. Every widget reads live from the underlying Odoo model, with an optional auto-refresh interval per dashboard.</p>
+        </div>
+        <div style="border-top: 1px solid #e3e3e3; padding-top: 16px; padding-bottom: 16px;">
+          <h5 style="color: #12162b; font-weight: 700; font-size: 16px; margin-bottom: 6px;">Do I need an API key to use NovaMind?</h5>
+          <p style="color: #6c6a85; font-size: 15px; margin-bottom: 0;">No &mdash; the built-in offline brain handles dashboard building, restyling and Q&amp;A out of the box. If you'd rather route it through your own account, add an OpenAI-compatible key and endpoint via System Parameters and NovaMind switches over.</p>
+        </div>
+        <div style="border-top: 1px solid #e3e3e3; padding-top: 16px; padding-bottom: 16px;">
+          <h5 style="color: #12162b; font-weight: 700; font-size: 16px; margin-bottom: 6px;">Does forecasting or anomaly detection need a Python package I don't have?</h5>
+          <p style="color: #6c6a85; font-size: 15px; margin-bottom: 0;">No. NovaBoard ships zero external Python dependencies &mdash; forecasting and anomaly detection run on built-in logic, so it installs on any Odoo 18 instance without extra pip packages.</p>
+        </div>
+        <div style="border-top: 1px solid #e3e3e3; padding-top: 16px; padding-bottom: 16px;">
+          <h5 style="color: #12162b; font-weight: 700; font-size: 16px; margin-bottom: 6px;">Can I move a dashboard between databases?</h5>
+          <p style="color: #6c6a85; font-size: 15px; margin-bottom: 0;">Yes, export it to JSON from Board Info or Control Center and import it on the target database.</p>
+        </div>
+        <div style="border-top: 1px solid #e3e3e3; border-bottom: 1px solid #e3e3e3; padding-top: 16px; padding-bottom: 16px;">
+          <h5 style="color: #12162b; font-weight: 700; font-size: 16px; margin-bottom: 6px;">How do I get support?</h5>
+          <p style="color: #6c6a85; font-size: 15px; margin-bottom: 0;">Email <a href="mailto:abdogabr354@gmail.com" style="color: #4038b5;">abdogabr354@gmail.com</a> or raise a ticket through the Odoo Apps store.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================== SUPPORT ===================== -->
+  <div class="container-fluid" style="background-color: #12162b; padding-top: 44px; padding-bottom: 44px; border-radius: 12px; margin-top: 16px;">
+    <div class="container text-center">
+      <h2 style="color: #ffffff; font-size: 26px; font-weight: 700; margin-bottom: 10px;">Support</h2>
+      <p style="color: #9d9bc0; font-size: 15px; max-width: 600px; margin-left: auto; margin-right: auto; margin-bottom: 22px;">
+        Questions about dashboards, widgets, or wiring up your own LLM &mdash; reach out directly.
+      </p>
+      <a href="mailto:abdogabr354@gmail.com" style="display: inline-block; background-color: #5b4ee5; color: #ffffff; font-weight: 700; font-size: 15px; padding-top: 12px; padding-bottom: 12px; padding-left: 28px; padding-right: 28px; border-radius: 6px; text-decoration: none;">Contact the maker</a>
+    </div>
+  </div>
+
+  <div class="container text-center" style="padding-top: 32px; padding-bottom: 40px;">
+    <p style="color: #6c6a85; font-size: 13px;">NOVABOARD &nbsp;&middot;&nbsp; Author: Abdulfattah (AM)</p>
+  </div>
+
+</section>
+</body>
+</html>

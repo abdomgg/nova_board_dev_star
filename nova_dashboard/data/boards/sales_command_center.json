@@ -1,0 +1,233 @@
+{
+  "nova_version": 1,
+  "requires": [
+    "sale.order"
+  ],
+  "name": "Sales Command Center",
+  "description": "Revenue, momentum and team performance \u2014 live",
+  "theme": "aurora",
+  "accent_color": "#7C6CFF",
+  "date_preset": "this_year",
+  "items": [
+    {
+      "name": "Revenue",
+      "item_type": "kpi",
+      "sequence": 1,
+      "pos": {
+        "x": 0,
+        "y": 0,
+        "w": 3,
+        "h": 5
+      },
+      "icon": "fa-line-chart",
+      "color": "#7C6CFF",
+      "model_name": "sale.order",
+      "domain": "[('state','=','sale')]",
+      "date_field_name": "date_order",
+      "agg": "sum",
+      "measure_names": "amount_total",
+      "use_currency": true,
+      "compare_previous_item": true,
+      "enable_forecast": true
+    },
+    {
+      "name": "Orders",
+      "item_type": "kpi",
+      "sequence": 2,
+      "pos": {
+        "x": 3,
+        "y": 0,
+        "w": 3,
+        "h": 5
+      },
+      "icon": "fa-shopping-cart",
+      "color": "#22C7A9",
+      "model_name": "sale.order",
+      "domain": "[('state','=','sale')]",
+      "date_field_name": "date_order",
+      "agg": "count",
+      "compare_previous_item": true
+    },
+    {
+      "name": "Avg Order Value",
+      "item_type": "tile",
+      "sequence": 3,
+      "pos": {
+        "x": 6,
+        "y": 0,
+        "w": 3,
+        "h": 5
+      },
+      "icon": "fa-tags",
+      "color": "#FF7A9E",
+      "model_name": "sale.order",
+      "domain": "[('state','=','sale')]",
+      "date_field_name": "date_order",
+      "agg": "avg",
+      "measure_names": "amount_total",
+      "use_currency": true,
+      "compare_previous_item": true
+    },
+    {
+      "name": "Open Quotations",
+      "item_type": "kpi",
+      "sequence": 4,
+      "pos": {
+        "x": 9,
+        "y": 0,
+        "w": 3,
+        "h": 5
+      },
+      "icon": "fa-file-text-o",
+      "color": "#FFB35C",
+      "model_name": "sale.order",
+      "domain": "[('state','in',('draft','sent'))]",
+      "date_field_name": "date_order",
+      "agg": "count"
+    },
+    {
+      "name": "Revenue Momentum",
+      "item_type": "line",
+      "sequence": 5,
+      "pos": {
+        "x": 0,
+        "y": 5,
+        "w": 8,
+        "h": 10
+      },
+      "icon": "fa-line-chart",
+      "model_name": "sale.order",
+      "domain": "[('state','=','sale')]",
+      "date_field_name": "date_order",
+      "agg": "sum",
+      "measure_names": "amount_total",
+      "group_field_name": "date_order",
+      "group_granularity": "month",
+      "fill_gaps": true,
+      "enable_forecast": true,
+      "forecast_periods": 3,
+      "detect_anomalies": true,
+      "compare_previous_item": true,
+      "use_currency": true,
+      "show_legend": true
+    },
+    {
+      "name": "Revenue by Team",
+      "item_type": "doughnut",
+      "sequence": 6,
+      "pos": {
+        "x": 8,
+        "y": 5,
+        "w": 4,
+        "h": 10
+      },
+      "icon": "fa-pie-chart",
+      "model_name": "sale.order",
+      "chart_palette": "ocean",
+      "domain": "[('state','=','sale')]",
+      "date_field_name": "date_order",
+      "agg": "sum",
+      "measure_names": "amount_total",
+      "group_field_name": "team_id",
+      "record_limit": 6,
+      "sort_dir": "desc",
+      "use_currency": true,
+      "show_legend": true
+    },
+    {
+      "name": "Top Salespeople",
+      "item_type": "bar",
+      "sequence": 7,
+      "pos": {
+        "x": 0,
+        "y": 15,
+        "w": 6,
+        "h": 9
+      },
+      "icon": "fa-users",
+      "model_name": "sale.order",
+      "chart_palette": "vivid",
+      "domain": "[('state','=','sale')]",
+      "date_field_name": "date_order",
+      "agg": "sum",
+      "measure_names": "amount_total",
+      "group_field_name": "user_id",
+      "record_limit": 10,
+      "sort_dir": "desc",
+      "use_currency": true,
+      "show_values": true
+    },
+    {
+      "name": "Top Customers",
+      "item_type": "leaderboard",
+      "sequence": 8,
+      "pos": {
+        "x": 6,
+        "y": 15,
+        "w": 6,
+        "h": 9
+      },
+      "icon": "fa-trophy",
+      "model_name": "sale.order",
+      "domain": "[('state','=','sale')]",
+      "date_field_name": "date_order",
+      "agg": "sum",
+      "measure_names": "amount_total",
+      "group_field_name": "partner_id",
+      "record_limit": 8,
+      "sort_dir": "desc",
+      "use_currency": true
+    },
+    {
+      "name": "Order Status Flow",
+      "item_type": "funnel",
+      "sequence": 9,
+      "pos": {
+        "x": 0,
+        "y": 24,
+        "w": 4,
+        "h": 9
+      },
+      "icon": "fa-filter",
+      "model_name": "sale.order",
+      "date_field_name": "date_order",
+      "agg": "count",
+      "group_field_name": "state"
+    },
+    {
+      "name": "Order Heat \u2014 Month \u00d7 Team",
+      "item_type": "heatmap",
+      "sequence": 10,
+      "pos": {
+        "x": 4,
+        "y": 24,
+        "w": 8,
+        "h": 9
+      },
+      "icon": "fa-th",
+      "model_name": "sale.order",
+      "date_field_name": "date_order",
+      "domain": "[('state','=','sale')]",
+      "agg": "count",
+      "group_field_name": "date_order",
+      "group_granularity": "month",
+      "subgroup_field_name": "team_id"
+    },
+    {
+      "name": "Latest Orders",
+      "item_type": "list",
+      "sequence": 11,
+      "pos": {
+        "x": 0,
+        "y": 33,
+        "w": 12,
+        "h": 9
+      },
+      "icon": "fa-table",
+      "model_name": "sale.order",
+      "date_field_name": "date_order",
+      "list_field_names": "name,partner_id,date_order,amount_total,state",
+      "record_limit": 8
+    }
+  ]
+}
