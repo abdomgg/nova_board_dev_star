@@ -55,6 +55,7 @@ NovaBoard v18.0 — Intelligent Dashboard Studio
             'nova_dashboard/static/src/js/**/*.js',
         ],
     },
+    "images": ["static/description/banner.png"],
     'post_init_hook': 'post_init_hook',
     'uninstall_hook': 'uninstall_hook',
     'application': True,
