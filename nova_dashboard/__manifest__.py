@@ -35,7 +35,7 @@ NovaBoard v18.0 — Intelligent Dashboard Studio
 """,
     'author': 'Abdulfattah',
     "support": "abdogabr354@gmail.com",
-    "price": 249.00,
+    "price": 140.00,
     "currency": "USD",
     'license': 'LGPL-3',
     'category': 'Productivity/Dashboards',
